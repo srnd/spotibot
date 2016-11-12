@@ -1,0 +1,31 @@
+{
+  "name": "codeday-spotibot",
+  "version": "0.0.1",
+  "description": "CodeDay's official Twitter-Spotify bot!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StudentRND/spotibot.git"
+  },
+  "keywords": [
+    "codeday",
+    "studentrnd"
+  ],
+  "author": "TJ Horner <tjhorner@studentrnd.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StudentRND/spotibot/issues"
+  },
+  "homepage": "https://github.com/StudentRND/spotibot",
+  "dependencies": {
+    "express": "^4.12.4",
+    "jsonfile": "^2.0.0",
+    "open": "0.0.5",
+    "spotify-web-api-node": "^2.0.2",
+    "twitter": "^1.2.5",
+    "unirest": "^0.4.0"
+  }
+}
