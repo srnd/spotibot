@@ -1,23 +1,25 @@
+const config = require('./config.json');
+
 module.exports = function(bot, spotify){
   // fallback, adds songs
-  bot.addCommand("@codedayspotibot", "fuck", function(message, args, channel, username, extra){
+  bot.addCommand("@"+config.followUsername, "fuck", function(message, args, channel, username, extra){
     if(message.indexOf("sandstorm") !== -1 || message.indexOf("darude") !== -1){
       bot.sendMessage("@" + username + " DUDUDUDU DUDUDU DUDUDUDUDU DUDUDUDU", extra.tweet.id_str);
     }else{
       spotify.searchTracks(message).then(function(data){
         var track = data.body.tracks.items[0];
         if(data.body.tracks.total <= 0){
-          bot.sendMessage("Sorry, @" + username + "... I couldn't find that song on Spotify :(", extra.tweet.id_str);
+          bot.sendMessage("Sorry, @" + username + "... I don't know that one.", extra.tweet.id_str);
         }else{
           trackInPlaylist(track, function(inPlaylist){
             if(inPlaylist){
-              bot.sendMessage("Sorry, @" + username + "... that song is already in the playlist!", extra.tweet.id_str);
+              bot.sendMessage("Sorry, @" + username + "... that song is already queued up!", extra.tweet.id_str);
             }else if(track.explicit || artistBlacklisted(track.artists)){
-              bot.sendMessage("Sorry, @" + username + "... that track/artist is blacklisted! (tell @tjhorner)", extra.tweet.id_str);
+              bot.sendMessage("Sorry, @" + username + "... I don't like that one.", extra.tweet.id_str);
             }else{
-              spotify.addTracksToPlaylist('tjahorner', '1Fp5ttUL53JtNiHJY5cVi8', [track.uri])
+              spotify.addTracksToPlaylist(config.playlistUsername, config.playlistId, [track.uri])
                 .then(function() {
-                  bot.sendMessage(randomGreeting("addSong") + ", @" + username + "! I've added " + track.name + " to the playlist.", extra.tweet.id_str);
+                  bot.sendMessage(randomGreeting("addSong") + ", @" + username + "! I've added " + track.name + " to the queue.", extra.tweet.id_str);
                 });
             }
           });

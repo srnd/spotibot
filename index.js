@@ -35,7 +35,7 @@ function init(){
     // ayy lmao, annoying log messages gone
   });
 
-  twitter.stream('statuses/filter', {track: '@CodeDaySpotibot'}, function(stream) {
+  twitter.stream('statuses/filter', {track: '@'+config.followUsername}, function(stream) {
     stream.on('data', function(tweet) {
       bot.processMessage(tweet.text, null, tweet.user.screen_name, {tweet: tweet});
     });

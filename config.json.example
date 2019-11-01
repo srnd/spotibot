@@ -1,0 +1,16 @@
+{
+    "followUsername": "djjohnpeter",
+    "playlistUsername": "hxrfsj44tmq6sk0o9so0lhyjx",
+    "playlistId": "6ZnkNGlKvR5BUyUliYqAgP",
+    "spotify": {
+        "clientId": "",
+        "clientSecret": "",
+        "refreshToken": ""
+    },
+    "twitter": {
+        "access_token_key": "",
+        "access_token_secret": "",
+        "consumer_key": "",
+        "consumer_secret": ""
+    }
+}
