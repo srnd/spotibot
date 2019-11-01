@@ -23,7 +23,7 @@
   "dependencies": {
     "express": "^4.12.4",
     "jsonfile": "^2.0.0",
-    "open": "0.0.5",
+    "open": "6.0.0",
     "spotify-web-api-node": "^2.0.2",
     "twitter": "^1.2.5",
     "unirest": "^0.4.0"
