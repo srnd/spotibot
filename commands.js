@@ -55,7 +55,7 @@ module.exports = function(bot, spotify){
   ];
 
   function trackInPlaylist(track, callback){
-    spotify.getPlaylist('tjahorner', '1Fp5ttUL53JtNiHJY5cVi8')
+    spotify.getPlaylist(config.playlistUsername, config.playlistId)
       .then(function(data) {
         var tracks = data.body.tracks.items;
         var inPlaylist = false;
