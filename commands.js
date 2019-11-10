@@ -49,9 +49,11 @@ module.exports = function(bot, spotify){
     // Rick Astley
     "0gxyHStUsqpMadRV0Di1Qt",
     // Childish Gambino
-    "73sIBHcqh3Z3NyqHKZ7FOL"
+    "73sIBHcqh3Z3NyqHKZ7FOL",
     // Justin Bieber
-    // "1uNFoZAHBGtllmzznpCI3s"
+    "1uNFoZAHBGtllmzznpCI3s",
+    // Toby Fox (Meglovania)
+    "57DlMWmbVIf2ssJ8QBpBau"
   ];
 
   function trackInPlaylist(track, callback){
